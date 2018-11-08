@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+
+
+@foreach (var dane in Model)
+{
+    @Html.RouteLink(dane,new {
+
+    controller = "ElectronicPart",
+    action = "List",
+    category = dane
+
+
+
+}, new { @class = "btn btn-primary btn-lg" })
+}

@@ -1,0 +1,47 @@
+﻿body{
+    background-color:lightgray;
+    margin:0;
+}
+
+.electronic{
+    margin-bottom:50px;
+
+}
+
+h2.logo{
+    margin-bottom:20px;
+    text-align:center;
+}
+.btn-primary {
+    margin-top:50px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    background-color: #3377ff;
+    border-color: #3377ff;
+}
+    .btn-primary:hover {
+        background-color: #6699ff;
+        border-color: #6699ff;
+    }
+nav {
+    background-color:#002b80;
+    font-size:20px;
+    line-height:200%;
+
+}
+.menu  ul {
+    list-style-type:none;
+}
+.menu  li{
+    display:inline-block;
+    padding-right:10px;
+    padding-left:10px;
+}
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+    .menu a:hover {
+        color: #ffff99;
+        text-decoration: none;
+    }

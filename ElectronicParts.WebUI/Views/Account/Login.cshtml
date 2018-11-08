@@ -1,0 +1,31 @@
+﻿@model ElectronicParts.WebUI.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Zaloguj sie</h3>
+    </div>
+
+    <div class="panel-body">
+        <p class="lead"> Zaloguj sie aby miec dostep do funkcji administracyjnych</p>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+            <div class="form-group">
+                <label>Nazwa uzytkownika:</label>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                <label>Hasło:</label>
+                @Html.PasswordFor(m => m.Passsword, new { @class = "form-control" })
+            </div>
+            <input type="submit" value="Zaloguj się" class="btn btn-primary" />
+            
+
+
+        }
+    </div>
+</div>

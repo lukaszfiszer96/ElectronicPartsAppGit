@@ -1,0 +1,23 @@
+﻿@model ElectronicParts.Domain.Entities.ElectronicPart
+
+@{
+    ViewBag.Title = "Edycja" + Model.Name + "administracyjna";
+}
+
+@using (Html.BeginForm("Edit","Admin"))
+{
+    <h1> Edycja @Model.Category </h1>
+
+    @Html.EditorForModel()
+    @Html.DropDownListFor(p=>p.Category, new List<SelectListItem>
+           {
+                   new SelectListItem { Text="Rezystor",Value="Rezystor"},
+                   new SelectListItem { Text="Kondensator",Value="Kondensator"},
+                   new SelectListItem { Text="Cewka",Value="Cewka"}
+
+           },"Wybierz kategorie")
+
+    <input type="submit" value="Zapisz" />
+    @Html.ActionLink("Anuluj i powróc do listy", "Index");
+    Html.ValidationSummary();
+}

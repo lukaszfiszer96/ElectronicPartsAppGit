@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<ElectronicParts.Domain.Entities.ElectronicPart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Panel administracyjny</h2>
+
+<p>
+    @Html.ActionLink("Stwórz nowy element", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxPower)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("Delete", "Admin", new { item.ElectronicPartID }))
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                <td>@Html.DisplayFor(modelItem => item.Value)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>@Html.DisplayFor(modelItem => item.MaxPower)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { item.ElectronicPartID }) |
+                    <input type="submit" value="Delete" />
+                </td>
+            </tr>
+        }
+    }
+
+</table>

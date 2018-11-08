@@ -1,0 +1,62 @@
+﻿@model ElectronicParts.WebUI.Models.ElectronicPartViewModel
+
+@{
+    ViewBag.Title = "Elementy Elektroniczne";
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-4">
+            @Html.Action("Menu", "Navigation")
+            @using (Html.BeginForm("List", "ElectronicPart", FormMethod.Get))
+            {@Html.TextBox("resistance") 
+                <input type="submit" value="Szukaj" />}
+        </div>
+
+        <div class="col-md-6">
+            <header>
+                <h2 class="logo">Baza danych elementów elektronicznych</h2>
+            </header>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Kategoria</th>
+                        <th>Wartość</th>
+                        <th>Cena</th>
+                        <th>Dopuszczalna moc</th>
+                        <th>Nazwa</th>
+                    </tr>
+                </thead>
+
+                @foreach (var item in Model.EleParts)
+                {
+                    string jednostka = "none";
+                    if (item.Category == "Rezystor") { jednostka = "kΩ"; }
+                    else if (item.Category == "Cewka") { jednostka = "µH"; }
+                    else { jednostka = "μF"; }
+                    <tr>
+                        <td> @Html.DisplayFor(modelItem => item.Category)</td>
+                        <td> @Html.DisplayFor(modelItem => item.Value) @jednostka  </td>
+                        <td> @Html.DisplayFor(modelItem => item.Price) zł</td>
+                        <td align="center"> @Html.DisplayFor(modelItem => item.MaxPower) W</td>
+                        <td> @Html.DisplayFor(modelItem => item.Name)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+
