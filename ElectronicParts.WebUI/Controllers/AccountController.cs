@@ -15,7 +15,7 @@ namespace ElectronicParts.WebUI.Controllers
         {
             authProvider = auth;
         }
-
+        int a;
         public ViewResult Login()
         {
             return View();
