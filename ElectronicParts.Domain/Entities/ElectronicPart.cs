@@ -14,7 +14,7 @@ namespace ElectronicParts.Domain.Entities
         public int ElectronicPartID { get; set; }
 
 
-        [ScaffoldColumn(false)]
+        //[ScaffoldColumn(false)]
         public string Category { get; set; }
 
         [Required]

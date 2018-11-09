@@ -41,7 +41,12 @@ nav {
     color: white;
     text-decoration: none;
 }
-    .menu a:hover {
+.menu a:hover {
         color: #ffff99;
         text-decoration: none;
     }
+
+.row button {
+    margin-top: 10px;
+
+}

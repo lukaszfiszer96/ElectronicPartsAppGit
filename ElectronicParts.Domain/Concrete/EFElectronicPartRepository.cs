@@ -21,14 +21,16 @@ namespace ElectronicParts.Domain.Concrete
             else
             {
                 ElectronicPart oldPart = context.ElectronicParts.Find(electronicPart.ElectronicPartID);
+                string a = oldPart.Category;
                 if (oldPart != null)
                 {
-                    oldPart.Category = electronicPart.Category;
+
                     oldPart.MaxPower = electronicPart.MaxPower;
                     oldPart.Name = electronicPart.Name;
                     oldPart.Price = electronicPart.Price;
                     oldPart.Value = electronicPart.Value;
-
+                    if (electronicPart.Category != null)
+                        oldPart.Category = electronicPart.Category;
                 }
             }
 

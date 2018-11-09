@@ -18,8 +18,8 @@
         <div class="col-md-4">
             @Html.Action("Menu", "Navigation")
             @using (Html.BeginForm("List", "ElectronicPart", FormMethod.Get))
-            {@Html.TextBox("resistance") 
-                <input type="submit" value="Szukaj" />}
+            {@Html.TextBox("resistance")
+            <input class="btn btn-danger" type="submit" value="Szukaj" />}
         </div>
 
         <div class="col-md-6">
