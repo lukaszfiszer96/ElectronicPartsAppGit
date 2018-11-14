@@ -13,6 +13,7 @@ namespace ElectronicParts.WebUI.App_Start
 
     public static class NinjectWebCommon 
     {
+    
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
