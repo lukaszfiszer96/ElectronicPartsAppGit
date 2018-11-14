@@ -17,8 +17,10 @@ namespace ElectronicParts.WebUI.Controllers
         }
 
         // GET: Navigation
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(string category = null)
         {
+            ViewBag.WybranaKat = category;
+
             IEnumerable<string> dane = repo.ElectronicParts
                 .Select(x => x.Category)
                 .Distinct()

@@ -12,17 +12,28 @@ h2.logo{
     margin-bottom:20px;
     text-align:center;
 }
+.btn-default {
+    margin-top: 50px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    background-color: #3377ff;
+    border-color: #3377ff;
+    color:white;
+}
+    .btn-default:hover {
+        background-color: #6699ff;
+        border-color: #6699ff;
+        color: white;
+    }
 .btn-primary {
     margin-top:50px;
     margin-right: 5px;
     margin-bottom: 20px;
     background-color: #3377ff;
-    border-color: #3377ff;
+    border-color: darkred;
+    border-width:medium;
 }
-    .btn-primary:hover {
-        background-color: #6699ff;
-        border-color: #6699ff;
-    }
+
 nav {
     background-color:#002b80;
     font-size:20px;
