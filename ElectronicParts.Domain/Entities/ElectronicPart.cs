@@ -13,8 +13,6 @@ namespace ElectronicParts.Domain.Entities
         [HiddenInput(DisplayValue = false)]
         public int ElectronicPartID { get; set; }
 
-
-        //[ScaffoldColumn(false)]
         public string Category { get; set; }
 
         [Required]

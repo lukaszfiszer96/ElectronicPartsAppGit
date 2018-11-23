@@ -32,7 +32,7 @@ namespace ElectronicParts.WebUI.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Nieprawidłowa nazwa uzytkownika lub nieprawidłowe hasło");
+                    ModelState.AddModelError("", "Nieprawidłowa nazwa użytkownika lub nieprawidłowe hasło");
                     return View();
                 }
             }

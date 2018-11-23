@@ -26,7 +26,7 @@ namespace ElectronicParts.WebUI.Controllers
                 EleParts = repository.ElectronicParts
                 .Where(p => category == null || p.Category == category)
                 .Where(p => resistance == null || p.Value == resistance),
-                //ElectronicRepo = repository.ElectronicParts
+
             };
             return View(model);
 
