@@ -10,40 +10,44 @@
 {
 
     @Html.HiddenFor(m => m.ElectronicPartID);
-    <div class="form-group col-sm-3">
-        <div class="row">
-            <label>Wartość:</label>
-            @Html.TextBoxFor(m => m.Value, new { @class = "form-control" })
-        </div>
-        <div class="row">
-            <label>Cena:</label>
-            @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
-        </div>
-        <div class="row">
-            <label>Dopuszczalna moc:</label>
-            @Html.TextBoxFor(m => m.MaxPower, new { @class = "form-control" })
-        </div>
-        <div class="row">
-            <label>Nazwa:</label>
-            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-        </div>
-
-
-        @*@Html.EditorForModel()*@
-        <div class="row">
-            @if (Model.Name == null)
-            {
-                @Html.DropDownListFor(p=>p.Category, new List<SelectListItem>
-                       {
-                               new SelectListItem { Text="Rezystor",Value="Rezystor"},
-                               new SelectListItem { Text="Kondensator",Value="Kondensator"},
-                               new SelectListItem { Text="Cewka",Value="Cewka"}
-
-                       },"Wybierz kategorie")
-            }
-            <button type="submit" class="btn btn-danger">Zapisz</button>
-         @Html.ActionLink("Anuluj i powróc do listy", "Index")
-        </div>
-        @Html.ValidationSummary()
+<div class="form-group col-sm-3">
+    <div class="row">
+        <label>Wartość:</label>
+        @Html.TextBoxFor(m => m.Value, new { @class = "form-control" })
     </div>
+    <div class="row">
+        <label>Cena:</label>
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+    </div>
+    <div class="row">
+        <label>Dopuszczalna moc:</label>
+        @Html.TextBoxFor(m => m.MaxPower, new { @class = "form-control" })
+    </div>
+    <div class="row">
+        <label>Nazwa:</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div class="row">
+        <label>Tolerancja:</label>
+        @Html.TextBoxFor(m => m.Tolerance, new { @class = "form-control" })
+    </div>
+
+
+    @*@Html.EditorForModel()*@
+    <div class="row">
+        @if (Model.Name == null)
+        {
+            @Html.DropDownListFor(p=>p.Category, new List<SelectListItem>
+                   {
+                           new SelectListItem { Text="Rezystor",Value="Rezystor"},
+                           new SelectListItem { Text="Kondensator",Value="Kondensator"},
+                           new SelectListItem { Text="Cewka",Value="Cewka"}
+
+                   },"Wybierz kategorie")
+        }
+        <button type="submit" class="btn btn-danger">Zapisz</button>
+        @Html.ActionLink("Anuluj i powróc do listy", "Index")
+    </div>
+    @Html.ValidationSummary()
+</div>
 }

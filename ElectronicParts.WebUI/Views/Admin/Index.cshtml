@@ -26,6 +26,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
+        </th>        
+        <th>
+            @Html.DisplayNameFor(model => model.Tolerance)
         </th>
         <th></th>
     </tr>
@@ -40,6 +43,7 @@
                 <td>@Html.DisplayFor(modelItem => item.Price)</td>
                 <td>@Html.DisplayFor(modelItem => item.MaxPower)</td>
                 <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Tolerance)</td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { item.ElectronicPartID }) |
                     <input type="submit" value="Delete" />

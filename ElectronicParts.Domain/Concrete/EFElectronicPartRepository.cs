@@ -31,6 +31,7 @@ namespace ElectronicParts.Domain.Concrete
                     oldPart.Value = electronicPart.Value;
                     if (electronicPart.Category != null)
                         oldPart.Category = electronicPart.Category;
+                    oldPart.Tolerance = electronicPart.Tolerance;
                 }
             }
 

@@ -28,11 +28,15 @@ namespace ElectronicParts.Domain.Entities
         [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Podaj moc")]
         [Display(Name = "Dopuszczalna moc")]
-        public int MaxPower { get; set; }
+        public decimal MaxPower { get; set; }
 
 
         [Display(Name = "Nazwa elementu")]
         [Required(ErrorMessage ="Podaj nazwe elementu !")]
         public string Name { get; set; }
+
+        [Display(Name = "Tolerancja elementu")]
+        [Required(ErrorMessage ="Podaj tolerancję elementu !")]
+        public decimal Tolerance { get; set; }
     }
 }

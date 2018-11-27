@@ -42,7 +42,7 @@ namespace ElectronicParts.WebUI.Controllers
             }
             else
             {
-                return View(s);
+                return View();
             }
         }
 

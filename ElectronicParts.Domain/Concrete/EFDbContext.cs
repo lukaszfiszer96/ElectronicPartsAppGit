@@ -13,3 +13,5 @@ namespace ElectronicParts.Domain.Concrete
         public DbSet<ElectronicPart> ElectronicParts { get; set; }
     }
 }
+
+
