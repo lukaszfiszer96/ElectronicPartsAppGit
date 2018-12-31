@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using ElectronicParts.Domain.Validation;
+
+
 
 namespace ElectronicParts.Domain.Entities
 {
@@ -20,10 +23,10 @@ namespace ElectronicParts.Domain.Entities
         [Display(Name="Wartośc elementu")]
         public decimal  Value { get; set; }
 
-        [Required]
-        [Range(0.01, double.MaxValue, ErrorMessage = "Podaj cene elementu")]
+        
         [Display(Name = "Cena")]
-        public decimal Price { get; set; }
+        [ValidatePrice]
+        public decimal? Price { get; set; }
 
         [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Podaj moc")]

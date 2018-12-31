@@ -19,6 +19,12 @@ namespace ElectronicParts.WebUI.Controllers
             this.repository = electrRepo;
         }
 
+
+        public ViewResult AkcjaBezWidoku()
+        {
+            return View();
+        }
+
         public ViewResult List(string category, decimal ? resistance)
         {
             ElectronicPartViewModel model = new ElectronicPartViewModel

@@ -20,10 +20,10 @@ h2.logo{
     border-color: #3377ff;
     color:white;
 }
-    .btn-default:hover {
-        background-color: #6699ff;
-        border-color: #6699ff;
-        color: white;
+.btn-default:hover {
+    background-color: #6699ff;
+    border-color: #6699ff;
+    color: white;
     }
 .btn-primary {
     margin-top:50px;
@@ -60,4 +60,13 @@ nav {
 .row button {
     margin-top: 10px;
 
+}
+.input-validation-error.form-control
+{
+    border:2px solid red;
+
+}
+.field-validation-error
+{
+    color:red;
 }

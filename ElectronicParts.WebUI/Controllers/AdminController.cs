@@ -34,6 +34,7 @@ namespace ElectronicParts.WebUI.Controllers
         [HttpPost]
         public ActionResult Edit(ElectronicPart electronicPart)
         {
+
             if (ModelState.IsValid)
             {
                 ElectronicRepo.SaveItem(electronicPart);
@@ -42,7 +43,7 @@ namespace ElectronicParts.WebUI.Controllers
             }
             else
             {
-                return View();
+                return View(electronicPart);
             }
         }
 

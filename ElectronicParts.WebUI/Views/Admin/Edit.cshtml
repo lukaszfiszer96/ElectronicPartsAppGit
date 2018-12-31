@@ -1,10 +1,15 @@
 ﻿@model ElectronicParts.Domain.Entities.ElectronicPart
 
-@{
+@*@{
     ViewBag.Title = "Edycja" + Model.Name + "administracyjna";
-}
+}*@
 
-<h1> Edycja @Model.Category </h1>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<h1> Edycja @*@Model.Category*@ </h1>
 
 @using (Html.BeginForm("Edit", "Admin"))
 {
@@ -14,28 +19,33 @@
     <div class="row">
         <label>Wartość:</label>
         @Html.TextBoxFor(m => m.Value, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Value)
     </div>
     <div class="row">
         <label>Cena:</label>
         @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Price)
     </div>
     <div class="row">
         <label>Dopuszczalna moc:</label>
         @Html.TextBoxFor(m => m.MaxPower, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.MaxPower)
     </div>
     <div class="row">
         <label>Nazwa:</label>
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
     </div>
     <div class="row">
         <label>Tolerancja:</label>
         @Html.TextBoxFor(m => m.Tolerance, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Tolerance)
     </div>
 
 
     @*@Html.EditorForModel()*@
     <div class="row">
-        @if (Model.Name == null)
+        @if (Model.ElectronicPartID == 0)
         {
             @Html.DropDownListFor(p=>p.Category, new List<SelectListItem>
                    {
@@ -48,6 +58,5 @@
         <button type="submit" class="btn btn-danger">Zapisz</button>
         @Html.ActionLink("Anuluj i powróc do listy", "Index")
     </div>
-    @Html.ValidationSummary()
 </div>
 }
